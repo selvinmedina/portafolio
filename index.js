@@ -9,8 +9,8 @@ mongoose.connect('mongodb+srv://selvin:1234@selvin-34yz6.mongodb.net/test?retryW
     .then(() => {
         console.log('Conexion a la base de datos establecida con satisfactoriamente!');
         // Creacion del servidor
-        app.listen(port, () => {
-            console.log('Servidor corriendo correctamente en la URL: localost:' + port);
+        app.listen(process.env.port || 3000, () => {
+            console.log('Servidor corriendo correctamente en la URL: localost:' + (process.env.port || 3000));
         });
     })
     .catch(error => console.log(error));
